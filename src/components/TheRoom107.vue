@@ -48,7 +48,7 @@ function message() {
   ></a-sound> -->
 
 
-  <a-entity position="3.5 5000.5 2" id="room-107">
+  <a-entity position="3.5 5000 2" id="room-107">
     <TheRoom></TheRoom>
     <a-gltf-model 
     id="clock" 

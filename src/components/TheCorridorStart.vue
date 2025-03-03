@@ -60,7 +60,7 @@ import "../aframe/teleport-camera-rig.js"
         position="0.88 1.1 2" 
         rotation="0 -90 0"
         clickable
-        teleport-camera-rig="x: -0.5; y: 5001; z: 0; rot: 0"
+        teleport-camera-rig="x: -0.5; y: 5000; z: 0; rot: 0"
         visible="false"
       ></a-plane>
     
