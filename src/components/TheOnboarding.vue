@@ -19,11 +19,20 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>Guess who is the killer?? </h1>
+      <h1>Qui est le tueur ??? </h1>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
       <div class="licences">
         <section>
+          <h4>Le bruit de la pluie emplit la pièce, un rythme constant contre la fenêtre. L'air est lourd, une odeur métallique flotte.
+
+              Chambre 107. Une mare de sang au sol. Pas de corps. Juste un silence pesant.
+
+              Quelque chose cloche. Il faut comprendre ce qui s'est passé.</h4>
+
+              <br>
+              <br>
+              <br>
           <h4>Movement modes support</h4>
           <ul>
             <li>
@@ -41,29 +50,20 @@
           </ul>
         </section>
         <section>
-          <h4>Source code</h4>
-          <blockquote><a href="https://github.com/Chabloz/a-frame-vite-vue-boilerplate">Github repo</a></blockquote>
-        </section>
+           </section>
         <dl>
           <dt>
-            <i>Included</i>
           </dt>
           <dt>
-            <a href="https://github.com/c-frame/aframe-extras" target="_blank">aframe-extras controls and animation-mixer</a>
           </dt><dd>
-            <a href="https://github.com/c-frame/aframe-extras/blob/master/LICENSE" target="_blank">MIT License</a>
           </dd>
 
           <dt>
-            <a href="https://github.com/jure/aframe-blink-controls/" target="_blank">aframe-blink-controls</a>
           </dt><dd>
-            <a href="https://github.com/jure/aframe-blink-controls/blob/main/LICENSE" target="_blank">MIT License</a>
           </dd>
 
           <dt>
-            <a href="https://github.com/diarmidmackenzie/aframe-multi-camera/" target="_blank">aframe-multi-camera</a>
           </dt><dd>
-            <a href="https://github.com/diarmidmackenzie/aframe-multi-camera/blob/main/LICENSE" target="_blank">MIT License</a>
           </dd>
 
       
