@@ -1,6 +1,6 @@
 <script setup>
   import TheRoom from './TheRoom.vue';
-  import { ref } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
   import "../aframe/teleport-camera-rig.js"
   import "../aframe/bloom.js"
 
@@ -8,10 +8,33 @@
   const showKey = ref(false);
   const correctCode = "3412";
   const showMail = ref(false);
+  const isVR = ref(false);
+
+
+// Détecter l'entrée et la sortie de la VR
+function checkVRMode() {
+  const scene = document.querySelector('a-scene');
+  if (!scene) return;
+
+  scene.addEventListener('enter-vr', () => {
+    isVR.value = true;
+  });
+
+  scene.addEventListener('exit-vr', () => {
+    isVR.value = false;
+  });
+}
+
+onMounted(() => {
+  checkVRMode();
+});
+
 
   function showCode() {
-    numpad.value = numpad.value ? false : true;
-  }
+    // numpad.value = numpad.value ? false : true;
+    numpad.value = !numpad.value;
+}
+
 
 
 
@@ -62,7 +85,7 @@ function message() {
     <a-gltf-model 
     id="post-it_el" 
     src="#post-it"  
-    position="-5.14 0.35 -2.72"
+    position="-5.14 0.35 -2.770"
     scale="0.03 0.03 0.03"
     ></a-gltf-model>
 
@@ -70,9 +93,18 @@ function message() {
       color="#000000" 
       opacity="0.7"
       value="3412"
-      position="-5.14 0.38 -2.72"  
+      position="-5.14 0.38 -2.770"  
       scale="0.15 0.15 0.15"
       rotation="-90 -150 -200"
+    ></a-text>
+
+    <a-text 
+      color="#ffffff" 
+      opacity="0.7"
+      value="Robbery \nfor \nDummies"
+      position="-5.17 0.33 -2.670"  
+      scale="0.15 0.15 0.15"
+      rotation="-90 -160 -200"
     ></a-text>
 
 
@@ -89,17 +121,28 @@ function message() {
     ></a-gltf-model>
 
 
-    <a-entity
+    <!-- <a-entity
       v-if="numpad"
       id="keyboard"
       super-keyboard="
-        hand: [cursor], #hand-right;
+        hand: [cursor];
+        _hand: #hand-right;
         filters: numbers;
         model: numpad;
         align: center;
         maxLength: 4;
         multipleInputs: true;
       "
+      @superkeyboardinput="testCode($event.detail)"
+      position="-2 1.2 -1.4"
+      rotation="0 -90 0"
+      clickable
+    ></a-entity> -->
+
+    <a-entity
+      v-if="numpad"
+      id="keyboard"
+      :super-keyboard="`hand: ${isVR ? '#hand-right' : '[cursor]'}; filters: numbers; model: numpad; align: center; maxLength: 4; multipleInputs: true;`"
       @superkeyboardinput="testCode($event.detail)"
       position="-2 1.2 -1.4"
       rotation="0 -90 0"
@@ -149,17 +192,10 @@ function message() {
       id="book_stack_el" 
       src="#book_stack" 
       position="-5.1 0.2 -2.7" 
-      scale="0.2 0.2 0.2" 
+      scale="0.25 0.2 0.24" 
       rotation="0 180 0"
     >
-    <a-text 
-      color="#ffffff" 
-      opacity="0.5"
-      value="Robbery for \nDummies"
-      position="-5.2 0.4 -2.7"  
-      scale="0.15 0.15 0.15"
-      rotation="-90 -150 -215"
-    ></a-text>
+    
     </a-gltf-model>
     
     

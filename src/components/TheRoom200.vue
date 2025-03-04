@@ -9,6 +9,12 @@ function message() {
   showMail.value = showMail.value ? false : true;
 }
 
+
+// const axePickedUp = ref(false);
+
+// function toggleAxe() {
+//   axePickedUp.value = !axePickedUp.value;
+// }
 </script>
 
 <template>
@@ -22,12 +28,24 @@ function message() {
       <a-gltf-model 
         id="axe" 
         src="#axe" 
-        position="-1.57 0.86 -1.41" 
+        position="-1.54 0.14 -1.38" 
         scale="0.15 0.110 0.09" 
-        rotation="0 180 70" 
-        
+        rotation="0 180 70"
+        clickable
+        @click="toggleAxe"
+        v-if="!axePickedUp" 
       ></a-gltf-model>
 
+
+      <!-- Hache dans la main de l'utilisateur -->
+      <a-gltf-model 
+        id="axe-in-hand" 
+        src="#axe" 
+        position="0 0 -0.5"  
+        scale="0.1 0.1 0.1" 
+        rotation="0 90 0"
+        
+      ></a-gltf-model>
      
 
       <a-gltf-model 

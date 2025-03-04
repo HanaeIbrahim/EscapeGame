@@ -7,7 +7,7 @@ import "../aframe/teleport-camera-rig.js"
 
 <template>
    <a-entity position="0 0 -0.1" rotation="0 180 0" id="corridorStrart">
-    <!-- <a-entity position="0 1000 -0.1" rotation="0 180 0"> -->
+    <!-- <a-entity position="0 2000 -0.1" rotation="0 180 0"> -->
     <a-gltf-model 
       id="corridor_start" 
       src="#corridor" 

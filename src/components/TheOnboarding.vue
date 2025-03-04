@@ -19,16 +19,16 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>Qui est le tueur ??? </h1>
+      <h1>Guess who is the killer ??? </h1>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
       <div class="licences">
         <section>
-          <h4>Le bruit de la pluie emplit la pièce, un rythme constant contre la fenêtre. L'air est lourd, une odeur métallique flotte.
+          <h4>The sound of rain fills the room, a steady rhythm against the window. The air is heavy, carrying a metallic scent.
 
-              Chambre 107. Une mare de sang au sol. Pas de corps. Juste un silence pesant.
+              Room 107. A pool of blood on the floor. No body. Just an unsettling silence.
 
-              Quelque chose cloche. Il faut comprendre ce qui s'est passé.</h4>
+              Something is wrong. As a detective, you must find out what happened.</h4>
 
               <br>
               <br>
@@ -80,7 +80,7 @@
 <style scoped>
   h1 { font-size: 1.5rem }
   a {
-    color: #eee;
+    color: #ffcbcb;
     text-decoration: none;
   }
   .licences {
@@ -103,7 +103,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: #161616;
     color: #ccc;
     width: 100vw;
     height: 100vh;
@@ -125,8 +125,8 @@
     font-size: 1.3rem;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
-    background-color: white;
-    color: black;
+    background-color: rgb(255, 208, 208);
+    color: rgb(236, 0, 0);
     border: none;
     cursor: pointer;
   }
